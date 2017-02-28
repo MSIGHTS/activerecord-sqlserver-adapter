@@ -55,6 +55,7 @@ module ActiveRecord
         @prepared_statements = true
         # Our Responsibility
         @connection_options = config
+        @config = config
         connect
         @sqlserver_azure = !!(select_value('SELECT @@version', 'SCHEMA') =~ /Azure/i)
         initialize_dateformatter
